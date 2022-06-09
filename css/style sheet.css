@@ -1,0 +1,153 @@
+@charset "UTF-8";
+/*共通項目------------*/
+html {
+  font-size: 100%; 
+  font-weight: 400;
+  font-family: "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "Yu Mincho Light", YuMincho, "Yu Mincho", 游明朝体, sans-serif;
+  
+}
+body{
+
+   line-height: 1.7;
+   color: #432;
+   
+}
+h1 {
+  text-align: center;
+  font-size: 2.25rem;
+}
+a {
+   text-decoration: none;
+   color: #432;
+}
+a:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+li {
+  list-style: none;
+}
+img {
+   max-width: 100%;
+}
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+/*header------------*/
+header {
+  background-size: cover;
+  background-position: center;
+  background-image: url(../image/header-bg.png);
+  height: 80vh;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding:0 10%;
+}
+
+.logo {
+  width: 130px;
+  margin-top: 30px;
+}
+
+.main-nav {
+  display: flex;
+  margin-top: 40px;
+  font-size: 1.125rem;
+  
+}
+.main-nav li {
+  margin-left: 55px;
+  
+}
+.main-nav a {
+  color: #432;
+}
+
+.home-title {
+  font-size: 3rem;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+/* お知らせーーーーーー*/
+.news-wrapper {
+  margin-top: 50px;
+}
+.news-wrapper h1 {
+margin-bottom: 40px;
+}
+.news-contents {
+  margin-top: 1rem;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.news-contents a {
+  display: flex;
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  
+}
+.news-contents li {
+  border-bottom: 1px solid #432;
+  margin-bottom: 30px;
+}
+.newsbox {
+  border: 1px solid #432;
+  margin: 0 30px;
+  padding: 0.3rem 0.6rem; 
+  font-size: 0.50rem;
+}
+
+/*施工事例ーーーーーーー*/
+
+.item {
+  width: 50%;
+  float: left;
+  padding: 5%;
+  text-align: center;
+}
+.item h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.mlink  {
+  border-top: 1px solid #432;
+  border-bottom: 1px solid #432;
+  margin: 10px 0px;
+  font-size: 1.15rem;
+  display: inline-block;
+  padding: 10px 0px;
+}
+.city {
+  font-size: 0.8rem;
+}
+.main-title {
+  margin-bottom: 40px;
+}
+
+.b-link h2{
+  font-size: 1.5rem;
+  border: 1px solid #432;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.itemb {
+  float: left;
+  width : 33.33333% ; /* 未対応ブラウザ用フォールバック */
+  width : -webkit-calc(100% / 3) ;
+  width : calc(100% / 3) ;
+}

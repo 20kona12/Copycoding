@@ -1,0 +1,364 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+  font-family: "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "Yu Mincho Light", YuMincho, "Yu Mincho", 游明朝体, sans-serif;
+  font-weight: 400;
+}
+
+/*ハンバーガーメニュー開のとき背景固定*/
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+/*(終)ハンバーガーメニュー開のとき背景固定*/
+.spOnly {
+  display: none;
+}
+
+.pcOnly {
+  display: block;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  color: #000;
+}
+a:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.btn {
+  font-size: 2rem;
+  border: #000 1px solid;
+  padding: 15px 40px;
+}
+
+.txll {
+  font-size: 4.8rem;
+}
+
+.txl {
+  font-size: 3.8rem;
+}
+
+.txm {
+  font-size: 2.4rem;
+}
+
+.txms {
+  font-size: 1.8rem;
+}
+
+header {
+  background: url(../img/header-bg.png);
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  color: #000;
+  position: relative;
+}
+header h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.nav .nav-logo img {
+  width: 13rem;
+}
+.nav .nav-menu ul {
+  width: 520px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.container {
+  padding: 9rem 0;
+}
+.container .wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+.container .wrapper .inner {
+  margin-top: 9rem;
+}
+
+.news .inner ul {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.news .inner ul li {
+  border-bottom: #000 1px solid;
+  padding: 30px 0;
+}
+.news .inner ul a {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.news .inner ul a p.newsBox {
+  font-size: 1.1rem;
+  border: #000 1px solid;
+  padding: 0.8rem 1rem;
+  margin: 0 30px;
+}
+.news .inner ul a p.detail {
+  width: 65%;
+  text-align: left;
+}
+
+.construct .inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+.construct .inner .inner-box {
+  width: 430px;
+  margin-bottom: 5rem;
+}
+.construct .inner .inner-box img {
+  width: 100%;
+}
+.construct .inner .inner-box h1 {
+  margin-top: 3rem;
+}
+.construct .inner .inner-box p {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+.construct .inner .inner-box img.more {
+  margin-top: 2rem;
+  width: 300px;
+}
+
+.link {
+  display: flex;
+  padding-bottom: 0;
+}
+.link a.link-box {
+  width: calc(100% / 3);
+  display: block;
+}
+.link a.link-box img {
+  width: 100%;
+}
+
+footer {
+  background: #000;
+}
+footer .nav .nav-menu ul li a {
+  color: #fff;
+}
+footer p {
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .txll {
+    font-size: 2.4rem;
+  }
+
+  .txl {
+    font-size: 2.4rem;
+  }
+
+  .spOnly {
+    display: block;
+  }
+
+  .pcOnly {
+    display: none;
+  }
+
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+  }
+
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #000;
+    position: absolute;
+  }
+
+  .menu-btn span:before {
+    bottom: 8px;
+  }
+
+  .menu-btn span:after {
+    top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  #menu-btn-check:checked ~ .menu-content {
+    left: 0;
+    /*メニューを画面内へ*/
+  }
+
+  #menu-btn-check {
+    display: none;
+  }
+
+  .menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    /*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: #acd2e2;
+    transition: all 0.5s;
+    /*アニメーション設定*/
+  }
+
+  .open {
+    display: block;
+  }
+
+  .menu-content ul {
+    padding: 70px 10px 0;
+  }
+
+  .menu-content ul li {
+    border-bottom: solid 1px #333;
+    list-style: none;
+    margin: 30px 0;
+  }
+
+  .menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: #333;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 15px 0px 5px;
+    position: relative;
+  }
+
+  .menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #333;
+    border-right: solid 2px #333;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    margin-top: -7.5px;
+  }
+
+  .nav .nav-logo img {
+    width: 90px;
+    margin-left: 5px;
+  }
+
+  .news .inner ul li {
+    text-align: left;
+  }
+  .news .inner ul li a {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  .news .inner ul li a p.detail {
+    width: 100%;
+    margin-top: 3.5rem;
+    font-size: 1.8rem;
+  }
+
+  .construct .wrapper .inner {
+    flex-direction: column;
+    margin: 0 auto 50px;
+    width: 95%;
+  }
+  .construct .wrapper .inner .inner-box {
+    width: 100%;
+    margin: 30px auto;
+  }
+
+  .link {
+    flex-direction: column;
+  }
+  .link a.link-box {
+    width: 100%;
+    display: block;
+  }
+  .link a.link-box img {
+    width: 100%;
+  }
+
+  footer .nav {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  footer .nav .nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: auto;
+  }
+  footer .nav .nav-menu ul li {
+    padding: 20px 0;
+  }
+  footer .nav .nav-menu ul li a {
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
